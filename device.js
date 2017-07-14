@@ -17,28 +17,32 @@ device.on('connect', function(){
   initialSetup(function(err,result){
     if(err) {
       console.log(err);
-      return device.end();
+      device.end();
     }
-    console.log(colors.green('5. content Instance 주기적 생성 시작'));
-    setInterval( function(){
-      var value = BASE_TMP + Math.floor(Math.random() * 5);
-      device.createContentInstance(config.containerName, value, function(err, result){
-        if(err) console.log(err)
-        else console.log(value, result);
-      });
-    },INTERVAL);
+    // console.log(colors.green('5. content Instance 주기적 생성 시작'));
+    // setInterval( function(){
+    //   var value = BASE_TMP + Math.floor(Math.random() * 5);
+    //   device.createContentInstance(config.containerName, value, function(err, result){
+    //     if(err) console.log(err)
+    //     else console.log(value, result);
+    //   });
+    // },INTERVAL);
   });
 })
 
 function initialSetup(cb) {
   async.waterfall([
-    function createNode(cb){
-      console.log(colors.blue('1. node 생성 요청'));
-      device.createNode(cb);
-    },
-    function createRemoteCSE(nodeRI, cb){
-      console.log(colors.blue('2. remoceCSE 생성 요청'));
-      device.createRemoteCSE(cb);
+    // function createNode(cb){
+    //   console.log(colors.blue('1. node 생성 요청'));
+    //   device.createNode(cb);
+    // },
+    // function createRemoteCSE(nodeRI, cb){
+    //   console.log(colors.blue('2. remoceCSE 생성 요청'));
+    //   device.createRemoteCSE(cb);
+    // },
+    function createAE(cb){
+      console.log(colors.blue('2. AE 생성 요청'));
+      device.createAE(cb);
     },
     function createContainer(dKey, cb){
       console.log(colors.blue('3. container 생성 요청'));
