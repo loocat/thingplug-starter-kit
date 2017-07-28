@@ -1,6 +1,7 @@
 module.exports = {
   userID : 'PUT_YOUR_ID', // Portal User ID from ThingPlug Portal
   uKey : 'USER_KEY_FROM_THINGPLUG.SKIOT.COM', // Replace it from User Key from My Page of ThingPlug portal 
+  servID : 'SERVICE_ID',
   appEUI : 'starterkittest', // Put Your own AppEUI
   nodeID : 'UNIQUE_DEVICE_ID', // Unique Node ID(Device ID)
   passCode : '000101', // Password for registering the device

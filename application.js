@@ -10,9 +10,6 @@ var config = require('./config');
 var api = require('./lib/api');
 
 async.waterfall([
-  // function (cb) {
-  //   api.createNode(config.nodeID, cb);
-  // },
   (cb) => {
     api.createAE(config, cb);
   },
